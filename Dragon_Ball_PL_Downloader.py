@@ -5,6 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 from cda_downloader import CDA
 
+# Make LICENSE, README.md, requirements and screenshot
+
 
 def create_links_list(basic_link):
     # Ask user how many links to create and make a list of links
