@@ -12,7 +12,7 @@ def create_links_list(basic_link):
     start = int(input("What's the starting episode number ?: "))
     total = int(input("What's the total number of episodes ?: "))
     links_list = []
-    for link_end in range(start, total):
+    for link_end in range(start, total+1):
         full_link = basic_link + str(link_end)
         links_list.append(full_link)
     return links_list
@@ -38,14 +38,14 @@ def get_cda_links(links_list):
 
 
 def create_cda_links_file(film_links_list):
-    # Write contents of film_links_list to cda_links.log file
+    # Write contents of film_links_list to cda_links.txt file
 
-    with open("cda_links.log", "w") as f:
+    with open("cda_links.txt", "w") as f:
         for entry in film_links_list:
             f.write(entry + "\n")
         # Check if file was created
-        if os.path.exists('cda_links.log'):
-            print('cda_links.log successfully created')
+        if os.path.exists('cda_links.txt'):
+            print('cda_links.txt successfully created')
 
 
 def download_files():
@@ -59,7 +59,7 @@ def download_files():
     # Iterate over links to download and save files to downloads folder
     count = 0
     list_of_counts = []
-    with open('cda_links.log', 'r') as f:
+    with open('cda_links.txt', 'r') as f:
         full_list = len([x for x in f])
         f.seek(0)
         for link in f:
