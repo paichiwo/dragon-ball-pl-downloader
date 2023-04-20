@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 
+# This application will let you download Dragon Ball episodes from https://dbpolska.net or https://cda.pl
+
 import os
 import requests
 from bs4 import BeautifulSoup
 from cda_downloader import CDA
-
-# Make LICENSE, README.md, requirements and screenshot
 
 
 def create_links_list(basic_link):
